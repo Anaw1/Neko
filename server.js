@@ -21,7 +21,7 @@ const PORT = 3000;
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY; 
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY; 
 const SERPER_API_KEY = process.env.SERPER_API_KEY; 
-const VOICE_ID = "htFfPSZGJwjBv1CL0aMD"; // Este ID no es secreto y se puede dejar
+const VOICE_ID = "htFfPSZGJwjBv1CL0aMD"; 
 // -------------------------------------------------------------------------
 
 
