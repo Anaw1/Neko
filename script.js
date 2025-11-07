@@ -31,7 +31,7 @@ async function generarRespuesta(pregunta) {
     // Si no es un saludo básico, procede a la búsqueda en Internet y a la IA
     try {
         // 2. Lógica de IA + Búsqueda en Internet (Llama a la ruta en server.js)
-        const response = await fetch("http://localhost:3000/chat-completo", { 
+        const response = await fetch("https://neko-ihf3.onrender.com/chat-completo", { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ prompt: pregunta })
