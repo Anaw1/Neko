@@ -1,0 +1,152 @@
+body {
+ font-family: "Poppins", sans-serif;
+ background: url("fondo.avif") no-repeat center center fixed;
+ background-size: cover;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ margin: 0;
+}
+
+.chat-container {
+ width: 400px;
+ height: 550px;
+ background: rgba(255, 255, 255, 0.15); /* FONDO SEMI-TRANSPARENTE OK */
+ border-radius: 20px;
+ backdrop-filter: blur(15px); /* EFECTO DE CRISTAL ESMERILADO OK */
+ box-shadow: 0 0 20px rgba(0,0,0,0.3);
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+}
+
+#chat-box {
+ flex: 1;
+ padding: 15px;
+ overflow-y: auto;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+/* Contenedor principal de cada línea de mensaje */
+.message-container {
+ display: flex;
+ align-items: flex-start; /* Alinea Avatar y Burbuja en la parte superior */
+ gap: 8px;
+}
+
+/* Alineación para mensajes del usuario (se pega a la derecha) */
+.user-message-container {
+    align-self: flex-end; 
+    /* Necesitas esta clase extra en JS para alinear todo el grupo de usuario a la derecha */
+}
+
+/* 🌟 CLAVE 1: Estilos del Avatar (Neko) */
+.message-container .avatar {
+    width: 40px; /* Tamaño del avatar, más visible */
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Evita que la imagen se reduzca */
+    margin-top: 5px; /* Pequeño ajuste para centrar verticalmente con la burbuja */
+}
+
+.user-message, .bot-message {
+ max-width: 75%;
+ padding: 10px 14px;
+ border-radius: 15px;
+ font-size: 14px;
+ word-wrap: break-word;
+}
+
+.user-message {
+ /* QUITAMOS align-self: flex-end; porque lo maneja .user-message-container */
+ background: linear-gradient(135deg, #84fab0, #8fd3f4);
+ color: #000;
+}
+
+.bot-message {
+ /* QUITAMOS align-self: flex-start; porque lo maneja .message-container */
+ background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+ color: #000;
+}
+
+/* El resto del CSS (.bot-info, .input-container, .typing) se mantiene igual */
+
+.bot-info {
+ display: flex;
+ align-items: center;
+ gap: 6px;
+ margin-bottom: 2px;
+}
+
+.bot-info img {
+ width: 25px;
+ height: 25px;
+ border-radius: 50%;
+ border: 1px solid rgba(255,255,255,0.6);
+}
+
+.bot-name {
+ font-size: 13px;
+ font-weight: 600;
+ color: #fff;
+ text-shadow: 0 0 3px rgba(0,0,0,0.4);
+}
+
+.input-container {
+ display: flex;
+ border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+#user-input {
+ flex: 1;
+ padding: 10px;
+ border: none;
+ background: transparent;
+ outline: none;
+ color: #fff;
+ font-size: 14px;
+}
+
+#send-btn {
+ background: rgba(255,255,255,0.2);
+ border: none;
+ color: white;
+ padding: 10px 15px;
+ cursor: pointer;
+ border-radius: 0 0 15px 0;
+ transition: background 0.3s;
+}
+
+#send-btn:hover {
+ background: rgba(255,255,255,0.4);
+}
+
+/* ✨ efecto escribiendo... */
+.typing {
+ display: flex;
+ gap: 4px;
+ padding: 10px 14px;
+ background: rgba(255,255,255,0.2);
+ border-radius: 15px;
+ align-self: flex-start;
+}
+
+.dot {
+ width: 6px;
+ height: 6px;
+ background-color: white;
+ border-radius: 50%;
+ animation: blink 1.4s infinite both;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+ 0%, 80%, 100% { opacity: 0; }
+ 40% { opacity: 1; }
+}
