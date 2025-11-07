@@ -15,12 +15,13 @@ const PORT = 3000;
 // -----------------------------
 
 
-// --- CONFIGURACIÓN DE CLAVES (🚨 ¡IMPORTANTE! MODIFICA SOLO ESTA SECCIÓN) ---
-// 🔑 CLAVE DE GEMINI: (Tu clave actual)
-const GEMINI_API_KEY = "AIzaSyC5ifsC-1YuUo05caFPS0lwXfmtaTuoZG4"; 
-// 🔑 CLAVE DE ELEVENLABS: ¡REEMPLAZA ESTA CLAVE! La clave anterior falló con error 401.
-const ELEVENLABS_API_KEY = "4efb6fad8842f8a47841f43932fedd929239387ef6a7821341436521504a106b"; 
-const VOICE_ID = "htFfPSZGJwjBv1CL0aMD"; 
+// server.js (Sección de CLAVES)
+
+// Render inyectará las claves secretas usando process.env
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY; 
+const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY; 
+const SERPER_API_KEY = process.env.SERPER_API_KEY; 
+const VOICE_ID = "htFfPSZGJwjBv1CL0aMD"; // Este ID no es secreto y se puede dejar
 // -------------------------------------------------------------------------
 
 
