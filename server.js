@@ -11,7 +11,7 @@ import { buscarEnGoogle } from './serper.js';
 
 // --- INICIALIZACIÓN CLAVE ---
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ;
 // -----------------------------
 
 
@@ -160,5 +160,5 @@ app.post("/voz", async (req, res) => {
 
 // 4. INICIAR EL SERVIDOR
 app.listen(PORT, () => {
-  console.log(`\n🎉 Servidor Neko IA listo en: http://localhost:${PORT}\n`);
+  console.log(`\n🎉 Servidor Neko IA listo. Puerto: ${PORT}\n`);
 });
