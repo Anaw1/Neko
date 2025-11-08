@@ -4,7 +4,7 @@ const voiceId = "htFfPSZGJwjBv1CL0aMD"; // Antonio- Larino conversacional seguro
 
 async function hablarConVoz(texto) {
   try {
-    const response = await fetch("https://neko-ihf3.onrender.com/voz", {
+    const response = await fetch("https://neko-jgqp.onrender.com/voz", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ texto }),
