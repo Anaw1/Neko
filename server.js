@@ -25,7 +25,11 @@ const VOICE_ID = "htFfPSZGJwjBv1CL0aMD"; // Este ID no es secreto y se puede dej
 // -------------------------------------------------------------------------
 
 
-app.use(cors());
+app.use(cors({
+    origin: '*', // Esto permite cualquier origen temporalmente para que funcione localmente
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+}));
 app.use(express.json());
 
 // Para resolver rutas en ES modules
