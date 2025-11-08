@@ -1,5 +1,5 @@
 // serper.js — búsqueda precisa en Google 🌐
-const serperApiKey = "625f4abd1184cb226d6faa6cf118252b804dd82b"; // ← pon tu clave aquí
+const serperApiKey = process.env.SERPER_API_KEY;
 
 async function buscarEnGoogle(pregunta) {
   try {
