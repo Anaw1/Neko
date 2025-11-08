@@ -133,28 +133,24 @@ function addMessage(sender, text) {
 }
 
 // --- LÓGICA DE SALUDO INICIAL DE LA IA ---
+// script.js (Fragmento de la Función de Saludo)
+
+// --- LÓGICA DE SALUDO INICIAL DE LA IA ---
 async function iniciarChatConSaludo() {
     const saludo = "¡Miau! Soy Neko, tu gatito IA. Estoy aquí para ayudarte 🐾";
-// Dentro de iniciarChatConSaludo()
-hablarConVoz(saludo);
+    
+    // 🛑 Línea corregida: La llamada a hablarConVoz(saludo); que estaba aquí ¡fue eliminada!
 
     // 1. INICIO DEL EFECTO ESCRIBIENDO
-    const typingContainer = document.createElement("div");
-    typingContainer.className = "bot-message typing";
-    typingContainer.innerHTML = `<span class="dot"></span><span class="dot"></span><span class="dot"></span>`;
-    chatBox.appendChild(typingContainer);
-    chatBox.scrollTop = chatBox.scrollHeight;
-
-    // Simular un retraso para que el usuario vea que la IA está "pensando"
-    await new Promise(resolve => setTimeout(resolve, 1500)); 
+    // ... (código de efecto escribiendo) ...
 
     // 2. QUITAR el efecto escribiendo
-    typingContainer.remove();
+    // ... (código para remover efecto) ...
 
     // 3. Mostrar el saludo
     addMessage("bot", saludo);
 
-    // 4. HACER QUE HABLE
+    // 4. HACER QUE HABLE (solo una vez)
     if (typeof hablarConVoz === 'function') {
         hablarConVoz(saludo);
     }
