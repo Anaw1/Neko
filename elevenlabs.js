@@ -1,4 +1,5 @@
 // elevenlabs.js — voz real de Neko 💖
+const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const voiceId = "htFfPSZGJwjBv1CL0aMD"; // Antonio- Larino conversacional seguro de si mismo
 
 async function hablarConVoz(texto) {
