@@ -11,7 +11,7 @@ import { buscarEnGoogle } from './serper.js';
 
 // --- INICIALIZACIÓN CLAVE ---
 const app = express();
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 3000;
 // -----------------------------
 
 
